@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 12:39:36 by yogun             #+#    #+#             */
-/*   Updated: 2022/09/01 17:55:30 by yogun            ###   ########.fr       */
+/*   Created: 2025/03/08 15:44:02 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/08 16:03:09 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include <stdlib.h>
+#include <stddef.h>
 
-int	main(int argc, char **argv)
+typedef struct s_list
 {
-	t_stack	*a;
-
-	a = ft_process(argc, argv);
-	if (!a || ft_checkdup(a))
-	{
-		ft_free(&a);
-		ft_error();
-	}
-	if (!ft_checksorted(a))
-		ft_sort(&a);
-	ft_free(&a);
-	return (0);
-}
+	struct s_list	*next;
+	long			number;
+}	t_list;

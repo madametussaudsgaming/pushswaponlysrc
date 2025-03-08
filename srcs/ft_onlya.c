@@ -1,20 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_print.c                                   :+:      :+:    :+:   */
+/*   ft_onlya.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 20:38:29 by yogun             #+#    #+#             */
-/*   Updated: 2022/08/03 20:55:11 by yogun            ###   ########.fr       */
+/*   Created: 2025/03/08 16:03:32 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/08 16:03:33 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
-
-//Here an error message is being printed out
-void	ft_error(void)
-{	
-	write (2, "Error\n", 6);
-	exit(1);
-}

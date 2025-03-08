@@ -1,19 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_utils.c                                    :+:      :+:    :+:   */
+/*   ft_both.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 20:53:02 by yogun             #+#    #+#             */
-/*   Updated: 2022/09/01 18:04:48 by yogun            ###   ########.fr       */
+/*   Created: 2025/03/08 16:03:21 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/08 16:03:22 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
-
-void	ft_error_ch(void)
-{
-	write(1, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
