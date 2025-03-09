@@ -3,10 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_both.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/08 16:03:21 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/08 16:03:22 by rpadasia         ###   ########.fr       */
+/*   Created: 2025/03/09 16:25:26 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/09 16:25:26 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include "../headerfile/push_swap.h"

@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_onlya.c                                         :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/08 16:03:32 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/08 16:03:33 by rpadasia         ###   ########.fr       */
+/*   Created: 2025/03/09 16:45:42 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/09 16:45:42 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfile/push_swap.h"
 
-void	ft_ra(t_list **A, int print)
+void	ft_error(void)
 {
-	t_list *tmp;
-
-	tmp = *A;
-	*A = ft_lstlast(*A);
-	(*A)->next = tmp;
-	*A = tmp->next;
-	tmp->next = NULL;
-	if (print == 0)
-		write(1, "ra\n", 3);
-}
-
-void	ft_rra(t_list **A, int print)
-{
-	t_list *tmp;
-	int i;
-
-	i = ft_lstsize(A);
-	tmp = *A;
-
-
+	write(2, "ERROR", 6);
+	exit(1);
 }

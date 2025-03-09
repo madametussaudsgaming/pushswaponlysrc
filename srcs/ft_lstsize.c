@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_onlya.c                                         :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/08 16:03:32 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/08 16:03:33 by rpadasia         ###   ########.fr       */
+/*   Created: 2025/03/09 18:11:22 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/09 18:11:22 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfile/push_swap.h"
 
-void	ft_ra(t_list **A, int print)
+int	ft_lstsize(t_list *lst)
 {
-	t_list *tmp;
+	int		i;
+	t_list	*node;
 
-	tmp = *A;
-	*A = ft_lstlast(*A);
-	(*A)->next = tmp;
-	*A = tmp->next;
-	tmp->next = NULL;
-	if (print == 0)
-		write(1, "ra\n", 3);
-}
-
-void	ft_rra(t_list **A, int print)
-{
-	t_list *tmp;
-	int i;
-
-	i = ft_lstsize(A);
-	tmp = *A;
-
-
+	node = lst;
+	i = 0;
+	while (node != NULL)
+	{
+		i++;
+		node = node->next;
+	}
+	return (i);
 }
