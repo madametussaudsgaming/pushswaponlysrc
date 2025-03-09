@@ -77,9 +77,18 @@ int main(int argc, char *argv[])
 	t_list *A;
 
 	A = ft_convert_1(argc, argv);
+	if (!A)
+	{
+		ft_free(&A);
+		ft_error();
+	}
 	if (ft_lst_dup_int(A))
 	{
 		ft_free(&A);
 		ft_error();
 	}
+	if (!ft_alrsorted(A))
+		ft_sort_main(&A);
+	ft_free(&A);
+	return(0);
 }
