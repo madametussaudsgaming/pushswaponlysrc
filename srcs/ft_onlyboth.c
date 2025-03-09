@@ -17,7 +17,8 @@ void	 ft_rr(t_list **A, t_list **B, char print)
 {
 	ft_ra(A, 'F');
 	ft_rb(B, 'F');
-	if (print == 1)
+
+	if (print == 1 && *A && *B)
 		write(1, "rr\n", 3);
 }
 
