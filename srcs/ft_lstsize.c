@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
+/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:11:22 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/09 18:11:22 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/10 18:05:43 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfile/push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *stack)
 {
 	int		i;
 	t_list	*node;

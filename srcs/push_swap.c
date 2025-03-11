@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
+/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 16:25:49 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/09 16:25:49 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/10 17:58:09 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_list *ft_convert_1(int argc, char *argv[])
 
 int 	ft_lst_dup_int(t_list *lst)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	while (lst)
 	{
@@ -69,7 +69,7 @@ int 	ft_lst_dup_int(t_list *lst)
 		}
 		lst = lst->next;
 	}
-	return(0);
+	return (0);
 }
 
 int main(int argc, char *argv[])
