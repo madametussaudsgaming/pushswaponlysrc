@@ -12,7 +12,38 @@
 
 #include "../headerfile/push_swap.h"
 
-int ft_rarb(t_list *A, t_list *B, int AB)
+/*
+"a" implies we are pushing from b to a, "b" implies we are pushing from a to b
+*/
+int	ft_rarb_a(t_list *A, t_list *B, int c)
+{
+	int	i;
+
+	i = ft_node_placement(A, c, 'a');
+	if (i < ft_find_index(B, c))
+		i = ft_find_index(B, c);
+	return (i);
+}
+
+int	ft_rarb_b(t_list *A, t_list *B, int c)
+{
+	int	i;
+
+	i = ft_node_placement(B, c, 'b');
+	if (i < ft_find_index(A, c))
+		i = ft_find_index(A, c);
+	return (i);
+}
+
+int ft_rarrb_b(t_list *A, t_list *B, int c)
 {
 	int i;
+
+	i = (ft_node_placement(A, c, 'a') + (ft_lstsize(B) - ft_find_index(B, c)));
+	return (i);
+}
+
+int ft_rrarb_a(t_list *A, t_list *B, int c)
+{
+	return (ft_node_placement(B, c, 'b') + (ft_lstsize(A) - ft_find_index(A, c)));
 }

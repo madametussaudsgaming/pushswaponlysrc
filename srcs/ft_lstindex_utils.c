@@ -12,26 +12,17 @@
 
 #include "../headerfile/push_swap.h"
 
-int	ft_find_index(t_list *lst, int num)
+int	ft_find_index(t_list *AB, int num)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	while (lst && lst->next)
+	while (AB->number != num)
 	{
-		if (lst->number == num)
-			return (i);
-		if (lst->next->number == num)
-			return (i + 1);
-		if (lst->next->next && lst->next->next->number == num)
-			return (i + 2);
-
-		lst = lst->next->next;
-		i = i + 2;
+		i++;
+		AB = AB->next;
 	}
-	if (lst && lst->number == num)
-		return (i);
-	return (-1);
+	return (i);
 }
 
 int	ft_node_placement(t_list *lst, int c, char AorB)
