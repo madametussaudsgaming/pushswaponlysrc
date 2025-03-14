@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_freestr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 18:01:34 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/10 18:05:16 by rpadasia         ###   ########.fr       */
+/*   Created: 2025/03/15 00:29:19 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/15 00:29:19 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfile/push_swap.h"
 
-t_list	*ft_lstlast(t_list *A)
+void	ft_free(char **lst)
 {
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	char	*tmp;
+
+	while (*lst)
+	{
+		tmp = *lst;
+		lst++;
+		free(tmp);
+	}
+	*lst = NULL;
 }

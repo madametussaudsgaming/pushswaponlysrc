@@ -12,6 +12,34 @@
 
 #include "../headerfile/push_swap.h"
 
+
+t_list	*ft_lstlast(t_list *A)
+{
+	while (A->next != NULL)
+		A = A->next;
+	return (A);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *node)
+{
+	if (!*lst)
+		*lst = node;
+	else
+		(ft_lstlast(*lst))->next = node;
+}
+
+t_list *ft_lstnew(void *content)
+{
+	t_list *node;
+
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		ft_error();
+	node->number = content;
+	node->next = NULL;
+	return (node);
+}
+
 int	ft_find_index(t_list *AB, int num)
 {
 	int		i;

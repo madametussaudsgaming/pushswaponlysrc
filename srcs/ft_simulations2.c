@@ -12,7 +12,7 @@
 
 #include "../headerfile/push_swap.h"
 
-ft_rrarrb_a(t_list *A, t_list *B, int c)
+int ft_rrarrb_a(t_list *A, t_list *B, int c)
 {
 	int i;
 
@@ -24,7 +24,7 @@ ft_rrarrb_a(t_list *A, t_list *B, int c)
 	return (i);
 }
 
-ft_rrarrb_b(t_list *A, t_list *B, int c)
+int ft_rrarrb_b(t_list *A, t_list *B, int c)
 {
 	int i;
 
@@ -36,7 +36,7 @@ ft_rrarrb_b(t_list *A, t_list *B, int c)
 	return (i);
 }
 
-ft_rrarb_a(t_list *A, t_list *B, int c)
+int ft_rrarb_a(t_list *A, t_list *B, int c)
 {
 	int i;
 
@@ -44,7 +44,7 @@ ft_rrarb_a(t_list *A, t_list *B, int c)
 	return (i);
 }
 
-ft_rrarb_b(t_list *A, t_list *B, int c)
+int ft_rrarb_b(t_list *A, t_list *B, int c)
 {
 	int i;
 
