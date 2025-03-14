@@ -51,4 +51,5 @@ int 	ft_rrarb_b(t_list *A, t_list *B, int c);
 char 	**ft_split(char *argv);
 char 	*ft_strncpy(char *s1, char *s2, int n);
 t_list 	*ft_lstnew(void *content);
-void	ft_free(char **lst);
+void	ft_freestr(char **lst);
+void	ft_freelst(t_list **lst);

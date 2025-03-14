@@ -12,7 +12,7 @@
 
 #include "../headerfile/push_swap.h"
 
-void	ft_free(char **lst)
+void	ft_freestr(char **lst)
 {
 	char	*tmp;
 
@@ -23,4 +23,19 @@ void	ft_free(char **lst)
 		free(tmp);
 	}
 	*lst = NULL;
+}
+
+void	ft_freelst(t_list **lst)
+{
+	t_list *tmp;
+
+	if (!lst)
+		ft_error();
+	while(*lst)
+	{
+		tmp = (*lst)->next;
+		(*lst)->number = 0;
+		free(*lst);
+		*lst = tmp;
+	}
 }

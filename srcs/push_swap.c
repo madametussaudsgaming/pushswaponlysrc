@@ -12,26 +12,24 @@
 
 #include "../headerfile/push_swap.h"
 
-t_list *ft_convert_many(int argc, char *argv[])
+t_list *ft_convert_many(int argc, char *argv[], t_list **A)
 {
 	int i;
 	int j;
 
 	i = 1;
-	t_list *A;
 
 	while (i < argc)
 	{
 		j=ft_atoi(argv[i]);
-		ft_lstadd_back(&A, ft_lstnew(j));
+		ft_lstadd_back(A, ft_lstnew(j));
 		i++;
 	}
 	return (A);
 }
 
-t_list *ft_convert_1(int argc, char *argv[])
+t_list *ft_convert_1(int argc, char *argv[], t_list **A)
 {
-	t_list *A;
 	int		i;
 	char **tmp;
 
@@ -40,13 +38,13 @@ t_list *ft_convert_1(int argc, char *argv[])
 		ft_error;
 	if (argc == 2)
 	{
-		tmp = ft_split(argv[1], 32);
+		tmp = ft_split(argv[1]);
 		while (tmp++)
 		{
 			i = ft_atoi(*tmp);
-			ft_lstadd_back(&A, ft_lstnew(i));
+			ft_lstadd_back(A, ft_lstnew(i));
 		}
-		ft_free(tmp);
+		ft_freestr(tmp);
 		free(tmp);
 	}
 	else
@@ -74,21 +72,21 @@ int 	ft_lst_dup_int(t_list *lst)
 
 int main(int argc, char *argv[])
 {
-	t_list *A;
+	t_list *A = NULL;
 
-	A = ft_convert_1(argc, argv);
+	A = ft_convert_1(argc, argv, &A);
 	if (!A)
 	{
-		ft_free(&A);
+		ft_freelst(&A);
 		ft_error();
 	}
 	if (ft_lst_dup_int(A))
 	{
-		ft_free(&A);
+		ft_freelst(&A);
 		ft_error();
 	}
 	if (!ft_alrsorted(A))
 		ft_sort_main(&A);
-	ft_free(&A);
+	ft_freelst(&A);
 	return(0);
 }
