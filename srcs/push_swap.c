@@ -74,6 +74,7 @@ int main(int argc, char *argv[])
 {
 	t_list *A = NULL;
 
+	void ft_argv_analysis(argv);
 	A = ft_convert_1(argc, argv, &A);
 	if (!A)
 	{

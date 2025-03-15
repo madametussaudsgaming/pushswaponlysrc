@@ -53,3 +53,7 @@ char 	*ft_strncpy(char *s1, char *s2, int n);
 t_list 	*ft_lstnew(void *content);
 void	ft_freestr(char **lst);
 void	ft_freelst(t_list **lst);
+int		ft_isnum(int c);
+int 	ft_sign(char *str, int j);
+void 	ft_space_or_num(char *str);
+void 	ft_argv_analysis(char **argv);
