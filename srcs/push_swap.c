@@ -6,36 +6,36 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 16:25:49 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/10 17:58:09 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:31:42 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfile/push_swap.h"
 
-t_list *ft_convert_many(int argc, char *argv[], t_list **A)
+t_list	*ft_convert_many(int argc, char *argv[], t_list **A)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 
 	while (i < argc)
 	{
-		j=ft_atoi(argv[i]);
+		j = ft_atoi(argv[i]);
 		ft_lstadd_back(A, ft_lstnew(j));
 		i++;
 	}
 	return (A);
 }
 
-t_list *ft_convert_1(int argc, char *argv[], t_list **A)
+t_list	*ft_convert_1(int argc, char *argv[], t_list **A)
 {
 	int		i;
-	char **tmp;
+	char	**tmp;
 
-	A=NULL;
+	A = NULL;
 	if (argc < 2)
-		ft_error;
+		ft_error();
 	if (argc == 2)
 	{
 		tmp = ft_split(argv[1]);
@@ -49,10 +49,10 @@ t_list *ft_convert_1(int argc, char *argv[], t_list **A)
 	}
 	else
 		A = ft_convert_many(argc, argv);
-	return(A);
+	return (A);
 }
 
-int 	ft_lst_dup_int(t_list *lst)
+int	ft_lst_dup_int(t_list *lst)
 {
 	t_list	*tmp;
 
@@ -70,11 +70,12 @@ int 	ft_lst_dup_int(t_list *lst)
 	return (0);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_list *A = NULL;
+	t_list	*A;
+	void	ft_argv_analysis(argv);
 
-	void ft_argv_analysis(argv);
+	A = NULL;
 	A = ft_convert_1(argc, argv, &A);
 	if (!A)
 	{
@@ -89,5 +90,5 @@ int main(int argc, char *argv[])
 	if (!ft_alrsorted(A))
 		ft_sort_main(&A);
 	ft_freelst(&A);
-	return(0);
+	return (0);
 }

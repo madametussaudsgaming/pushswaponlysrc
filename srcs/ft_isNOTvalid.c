@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_args_valid.c                                 :+:      :+:    :+:   */
+/*   ft_isNOTvalid.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
+/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 15:28:04 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/15 15:28:04 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/16 21:24:46 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void ft_space_or_num(char *str)
 	}
 }
 
-void ft_argv_analysis(char **argv)
+void	ft_argv_analysis(char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (!argv[i])

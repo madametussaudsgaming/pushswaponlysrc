@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:20:19 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/11 15:28:17 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/16 17:15:57 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_lstadd_back(t_list **lst, t_list *node)
 		(ft_lstlast(*lst))->next = node;
 }
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)

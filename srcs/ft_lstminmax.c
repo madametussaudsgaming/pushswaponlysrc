@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:03:51 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/10 18:16:12 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:43:05 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,21 @@ int	ft_lstfattest(t_list *lst)
 			fat = lst->number;
 		lst = lst->next;
 	}
+}
+
+void	sort_3_integers(t_list **stack)
+{
+	t_list	*fattest;
+	t_list	*smollest;
+
+	fattest = ft_lstfattest(*stack);
+	smollest = ft_lstsmollest(*stack);
+	if (!stack)
+		return ;
+	if (*stack == fattest)
+		ra(stack);
+	else if ((*stack)->next == fattest)
+		rra(stack);
+	if (*stack != smollest)
+		sa(stack);
 }
