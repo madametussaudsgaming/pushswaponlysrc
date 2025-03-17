@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:44:02 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/16 19:56:23 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/17 17:52:35 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ typedef struct s_list
 	struct s_list	*next;
 	long			number;
 }	t_list;
+
+typedef struct s_rotate_info
+{
+	int		value;
+	char	stack_id;
+	int		reverse;
+}	t_rotate_info;
 
 void	ft_error(void);
 int		ft_atoi(char *str);
@@ -60,3 +67,5 @@ void	ft_argv_analysis(char **argv);
 void	sort_3_integers(t_list **stack);
 int		ft_lstsize(t_list *stack);
 int		ft_find_index(t_list *AB, int num);
+int		ft_node_placement(t_list *lst, int c, char AorB);
+

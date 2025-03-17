@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 17:53:33 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/16 17:17:48 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:31:44 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ int	ft_rarb_b(t_list *A, t_list *B, int c)
 	return (i);
 }
 
-int ft_rarrb_b(t_list *A, t_list *B, int c)
+int	ft_rarrb_b(t_list *A, t_list *B, int c)
 {
-	int i;
+	int	i;
 
 	i = (ft_node_placement(A, c, 'a') + (ft_lstsize(B) - ft_find_index(B, c)));
 	return (i);
 }
 
-int ft_rrarb_a(t_list *A, t_list *B, int c)
+int	ft_rrarb_a(t_list *A, t_list *B, int c)
 {
 	return (ft_node_placement(B, c, 'b') + (ft_lstsize(A) - ft_find_index(A, c)));
 }
