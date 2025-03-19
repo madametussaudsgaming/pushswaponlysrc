@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:44:02 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/17 17:52:35 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/19 11:53:06 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ typedef struct s_list
 	long			number;
 }	t_list;
 
-typedef struct s_rotate_info
+typedef struct s_r_info
 {
-	int		value;
-	char	stack_id;
-	int		reverse;
-}	t_rotate_info;
+	int		val;
+	char	id;
+	int		rev;
+	char	type;
+}	t_r_info;
 
 void	ft_error(void);
 int		ft_atoi(char *str);
