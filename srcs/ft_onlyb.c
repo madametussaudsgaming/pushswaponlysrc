@@ -53,7 +53,7 @@ void	ft_pa(t_list **A, t_list **B, char print)
 	(*B)->next = tmp;
 	if(print == 'T')
 	{
-		write(1, "pb\n", 3);
+		write(1, "pa\n", 3);
 	}
 }
 

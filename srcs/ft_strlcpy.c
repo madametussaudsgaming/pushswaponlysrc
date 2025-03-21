@@ -1,19 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 16:45:42 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/10 16:22:29 by rpadasia         ###   ########.fr       */
+/*   Created: 2025/03/21 19:33:14 by rpadasia          #+#    #+#             */
+/*   Updated: 2025/03/21 19:33:14 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headerfile/push_swap.h"
-
-void	ft_error(void)
-{
-	ft_putendl_fd("ERROR\n", 2);
-	exit(1);
-}

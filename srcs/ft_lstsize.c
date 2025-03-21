@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *stack)
 	int		i;
 	t_list	*node;
 
-	node = lst;
+	node = stack;
 	i = 0;
 	while (node != NULL)
 	{

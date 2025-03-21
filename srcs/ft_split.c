@@ -19,50 +19,74 @@ char *ft_strncpy(char *s1, char *s2, int n)
 	i = 0;
 	while (i<n && s2[i])
 	{
-		s1[i] == s2[i];
+		s1[i] = s2[i];
 		i++;
 	}
 	s1[i] = '\0';
 	return (s1);
 }
 
-char **ft_split(char *argv)
+int	ft_word_count(char *str)
 {
-	int i;
-	int j;
-	int k;
-	int wc;
-	char **arr;
+	int	i;
+	int	wc;
 
-	i=0;
-	j=0;
-	k=0;
-	wc=0;
-
-	while (argv[i])
+	i = 0;
+	wc = 0;
+	while (str[i])
 	{
-		while (argv[i] == 32 || (argv[i] >= 9 && argv[i] <= 13))
+		while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 			i++;
-		if (argv[i])
+		if (str[i])
 			wc++;
-		while ((argv[i] != 32 && !(argv[i] >= 9 && argv[i] <= 13)))
+		while (str[i] && str[i] != 32 && !(str[i] >= 9 && str[i] <= 13))
 			i++;
 	}
-	arr = (char **)malloc(sizeof(char *) * (wc+1));
+	return (wc);
+}
+
+char	*ft_word_dup(char *str, int start, int end)
+{
+	char	*word;
+	int		i;
+
+	word = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!word)
+		return (NULL);
 	i = 0;
+	while (start < end)
+	{
+		word[i] = str[start];
+		i++;
+		start++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char *argv)
+{
+	int		i;
+	int		j;
+	int		k;
+	int		wc;
+	char	**arr;
+
+	wc = ft_word_count(argv);
+	arr = (char **)malloc(sizeof(char *) * (wc + 1));
+	if (!arr)
+		return (NULL);
+	i = 0;
+	k = 0;
 	while (argv[i])
 	{
 		while (argv[i] == 32 || (argv[i] >= 9 && argv[i] <= 13))
 			i++;
-		j=i;
-		while ((argv[i] != 32 && !(argv[i] >= 9 && argv[i] <= 13)))
+		j = i;
+		while (argv[i] && argv[i] != 32 && !(argv[i] >= 9 && argv[i] <= 13))
 			i++;
 		if (i > j)
-		{
-			arr[k] = (char *)malloc(sizeof(char) * (i-j+1));
-			ft_strncpy(arr[k], &argv[j], (i-j));
-			k++;
-		}
+			arr[k++] = ft_word_dup(argv, j, i);
 	}
 	arr[k] = NULL;
 	return (arr);

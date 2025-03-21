@@ -23,6 +23,7 @@ int	ft_lstsmollest(t_list *lst)
 			smol = lst->number;
 		lst = lst->next;
 	}
+	return (smol);
 }
 
 int	ft_lstfattest(t_list *lst)
@@ -36,6 +37,7 @@ int	ft_lstfattest(t_list *lst)
 			fat = lst->number;
 		lst = lst->next;
 	}
+	return (fat);
 }
 
 void	sort_3_integers(t_list **stack)
@@ -48,9 +50,9 @@ void	sort_3_integers(t_list **stack)
 	if (!stack)
 		return ;
 	if (*stack == fattest)
-		ra(stack);
+		ft_ra(stack, 'T');
 	else if ((*stack)->next == fattest)
-		rra(stack);
+		ft_rra(stack, 'T');
 	if (*stack != smollest)
-		sa(stack);
+		ft_sa(stack, 'T');
 }

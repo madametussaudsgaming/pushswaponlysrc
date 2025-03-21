@@ -14,36 +14,47 @@
 
 /*
 "a" implies we are pushing from b to a, "b" implies we are pushing from a to b
+top one works
 */
 int	ft_rarb_a(t_list *A, t_list *B, int c)
 {
 	int	i;
 
-	i = ft_node_placement(A, c, 'a');
+	i = ft_placement_a(A, c);
 	if (i < ft_find_index(B, c))
 		i = ft_find_index(B, c);
 	return (i);
 }
+/*
+can confirm this is correct
+*/
 
 int	ft_rarb_b(t_list *A, t_list *B, int c)
 {
 	int	i;
 
-	i = ft_node_placement(B, c, 'b');
+	i = ft_placement_b(B, c);
 	if (i < ft_find_index(A, c))
 		i = ft_find_index(A, c);
 	return (i);
 }
+/*
+can confirm this
+*/
+
+int	ft_rarrb_a(t_list *A, t_list *B, int c)
+{
+	int	i;
+
+	i = (ft_placement_a(A, c) + (ft_lstsize(B) - ft_find_index(B, c)));
+	return (i);
+}
+/*FINALLY FIXED*/
 
 int	ft_rarrb_b(t_list *A, t_list *B, int c)
 {
 	int	i;
 
-	i = (ft_node_placement(A, c, 'a') + (ft_lstsize(B) - ft_find_index(B, c)));
+	i = ((ft_lstsize(B) - ft_placement_b(B, c)) + ft_find_index(A, c));
 	return (i);
-}
-
-int	ft_rrarb_a(t_list *A, t_list *B, int c)
-{
-	return (ft_node_placement(B, c, 'b') + (ft_lstsize(A) - ft_find_index(A, c)));
 }

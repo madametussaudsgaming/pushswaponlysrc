@@ -28,7 +28,7 @@ void	ft_lstadd_back(t_list **lst, t_list *node)
 		(ft_lstlast(*lst))->next = node;
 }
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*node;
 
@@ -51,33 +51,4 @@ int	ft_find_index(t_list *AB, int num)
 		AB = AB->next;
 	}
 	return (i);
-}
-
-int	ft_node_placement(t_list *lst, int c, char AorB)
-{
-	int		i;
-	t_list	*tmp;
-
-	i = 0;
-	tmp = lst;
-
-	if (!lst)
-		return (0);
-
-	while (tmp->next)
-	{
-		if (AorB == 'A' || AorB == 'a')
-		{
-			if (tmp->number < c && tmp->next->number > c)
-				return (i + 1);
-		}
-		else if (AorB == 'B' || AorB == 'b')
-		{
-			if (tmp->number > c && tmp->next->number < c)
-				return (i + 1);
-		}
-		tmp = tmp->next;
-		i++;
-	}
-	return (0);
 }

@@ -33,6 +33,11 @@ static int	ft_best_rotation(t_list *A, t_list *B)
 	return (best);
 }
 
+// This function calculate and decides which rotation
+// combination is best to use to sort the stack. Of
+// course, after rotation there is always one push
+// operation is left to do which i embeded to code.
+// Function is used during push from B to A, or A to B depending on the mode.
 int	ft_rotate_type(t_list *A, t_list *B, char mode)
 {
 	t_list	*tmp;
