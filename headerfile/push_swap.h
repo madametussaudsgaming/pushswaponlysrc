@@ -6,13 +6,14 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:44:02 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/19 11:53:06 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:34:40 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
-
+#include <unistd.h>
+#include <limits.h>
 
 typedef struct s_list
 {
@@ -69,3 +70,4 @@ char 	*ft_strncpy(char *s1, char *s2, int n);
 int		ft_word_count(char *str);
 char	*ft_word_dup(char *str, int start, int end);
 char	**ft_split(char *argv);
+void	ft_sort_main(t_list **a);
