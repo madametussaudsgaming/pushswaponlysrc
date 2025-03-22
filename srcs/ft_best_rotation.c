@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 15:28:12 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/17 17:52:37 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:13:55 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_rotate_type(t_list *A, t_list *B, char mode)
 		move = ft_best_rotation(A, B);
 		if (move < i)
 			i = move;
-		tmp = tmp->number;
+		tmp = tmp->next;
 	}
 	return (i);
 }

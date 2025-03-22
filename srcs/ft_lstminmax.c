@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:03:51 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/16 16:43:05 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:22:37 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,17 @@ int	ft_lstfattest(t_list *lst)
 
 void	sort_3_integers(t_list **stack)
 {
-	t_list	*fattest;
-	t_list	*smollest;
+	int	fattest;
+	int	smollest;
 
+	if (!stack || !*stack)
+		return ;
 	fattest = ft_lstfattest(*stack);
 	smollest = ft_lstsmollest(*stack);
-	if (!stack)
-		return ;
-	if (*stack == fattest)
+	if (*stack && (*stack)->number == fattest)
 		ft_ra(stack, 'T');
-	else if ((*stack)->next == fattest)
+	else if ((*stack)->next && (*stack)->next->number == fattest)
 		ft_rra(stack, 'T');
-	if (*stack != smollest)
+	if ((*stack)->number != smollest)
 		ft_sa(stack, 'T');
 }
