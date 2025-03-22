@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:03:34 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/22 12:49:27 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:55:55 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_rb(t_list **B, char print)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
+	if (!B || !(*B) || !(*B)->next)
+		return ;
 
 	tmp = *B;
 	*B = ft_lstlast(*B);
@@ -27,8 +30,11 @@ void	ft_rb(t_list **B, char print)
 
 void	ft_rrb(t_list **B, char print)
 {
-	t_list *tmp;
-	int i;
+	t_list	*tmp;
+	int		i;
+
+	if (!B || !(*B) || !(*B)->next)
+		return ;
 
 	i = ft_lstsize(*B);
 	tmp = *B;
@@ -45,7 +51,10 @@ void	ft_rrb(t_list **B, char print)
 
 void	ft_pa(t_list **A, t_list **B, char print)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
+	if (!B || !(*B))
+		return ;
 
 	tmp = *B;
 	*B = *A;
@@ -57,9 +66,9 @@ void	ft_pa(t_list **A, t_list **B, char print)
 	}
 }
 
-void 	ft_sb(t_list **B, char print)
+void	ft_sb(t_list **B, char print)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *B;
 	*B = (*B)->next;

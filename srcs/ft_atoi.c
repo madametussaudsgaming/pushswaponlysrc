@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 16:48:37 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/10 17:51:12 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:34:13 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(char *str)
 	res = 0;
 	i = 0;
 	isnegative = 0;
-	while ((str[i] <= 13 && str[i] >= 9) || str[i] == 32)
+	while (str[i] && ((str[i] <= 13 && str[i] >= 9) || str[i] == 32))
 		i++;
 	if (str[i] == '-')
 		isnegative = 1;
@@ -33,7 +33,7 @@ int	ft_atoi(char *str)
 		res += ((int)str[i] - 48);
 		i++;
 	}
-	if (res > 2147483647 || res < -2147483647)
+	if (res > INT_MAX || res < INT_MIN)
 		ft_error();
 	if (isnegative)
 		return (-res);

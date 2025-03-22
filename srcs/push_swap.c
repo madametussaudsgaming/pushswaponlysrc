@@ -6,13 +6,13 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 16:25:49 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/22 12:51:47 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:36:00 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfile/push_swap.h"
 
-void	*ft_convert_many(int argc, char *argv[], t_list **A)
+void	ft_convert_many(int argc, char *argv[], t_list **A)
 {
 	int	i;
 	int	j;
@@ -26,7 +26,7 @@ void	*ft_convert_many(int argc, char *argv[], t_list **A)
 	}
 }
 
-void	*ft_convert_1(int argc, char *argv[], t_list **A)
+void	ft_convert_1(int argc, char *argv[], t_list **A)
 {
 	int		i;
 	char	**tmp;
@@ -42,6 +42,7 @@ void	*ft_convert_1(int argc, char *argv[], t_list **A)
 		{
 			i = ft_atoi(*ptr);
 			ft_lstadd_back(A, ft_lstnew(i));
+			ptr++;
 		}
 		ft_freestr(tmp);
 	}

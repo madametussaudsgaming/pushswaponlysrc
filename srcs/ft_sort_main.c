@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 21:35:30 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/22 13:09:05 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:07:07 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	pb_until_3_left(t_list **A, t_list **B)
 			else if (i == ft_rrarb_b(*A, *B, tmp->number))
 				i = apply_rrarb(A, B, tmp->number, 'a');
 			else
-				break;
+				break ;
 			tmp = tmp->next;
 		}
 	}
@@ -49,9 +49,9 @@ void	pb_until_3_left(t_list **A, t_list **B)
 // the stack_b is sorted. When three elements are left,
 // it calls the ft_sort_three function to sort left over
 // elements in stack_a.
-t_list *stack_b_sort(t_list **A)
+t_list	*stack_b_sort(t_list **A)
 {
-	t_list *b;
+	t_list	*b;
 
 	b = NULL;
 	if (ft_lstsize(*A) > 3 && !ft_alrsorted(*A))
@@ -71,38 +71,26 @@ t_list	**sort_a(t_list **A, t_list **B)
 {
 	int		i;
 	t_list	*tmp;
-	t_list	*next;
+
+	if (!*B)
+		return (A);
 
 	while (*B)
 	{
 		tmp = *B;
-		next = tmp->next;
 		i = ft_rotate_type(*A, *B, 'b');
 		while (i >= 0)
 		{
 			if (i == ft_rarb_a(*A, *B, tmp->number))
-			{
 				i = apply_rarb(A, B, tmp->number, 'b');
-				break ;
-			}
 			else if (i == ft_rrarb_a(*A, *B, tmp->number))
-			{
 				i = apply_rrarb(A, B, tmp->number, 'b');
-				break ;
-			}
 			else if (i == ft_rrarrb_a(*A, *B, tmp->number))
-			{
 				i = apply_rrarrb(A, B, tmp->number, 'b');
-				break ;
-			}
 			else if (i == ft_rarrb_a(*A, *B, tmp->number))
-			{
 				i = apply_rarrb(A, B, tmp->number, 'b');
-				break ;
-			}
 			tmp = tmp->next;
 		}
-		*B = next;
 	}
 	return (A);
 }
