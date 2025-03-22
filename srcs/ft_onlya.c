@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:03:32 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/08 16:03:33 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:39:24 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_rra(t_list **A, char print)
 	t_list *tmp;
 	int i;
 
-	i = ft_lstsize(A);
+	i = ft_lstsize(*A);
 	tmp = *A;
 	(*A)->next = tmp;
 	while (i > 1)

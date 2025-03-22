@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:03:34 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/08 16:03:42 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:49:27 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_rrb(t_list **B, char print)
 	t_list *tmp;
 	int i;
 
-	i = ft_lstsize(B);
+	i = ft_lstsize(*B);
 	tmp = *B;
 	(*B)->next = tmp;
 	while (i > 1)
@@ -51,7 +51,7 @@ void	ft_pa(t_list **A, t_list **B, char print)
 	*B = *A;
 	*A = (*A)->next;
 	(*B)->next = tmp;
-	if(print == 'T')
+	if (print == 'T')
 	{
 		write(1, "pa\n", 3);
 	}

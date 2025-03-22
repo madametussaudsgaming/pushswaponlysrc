@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:20:19 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/16 17:15:57 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:12:36 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,17 @@ int	ft_find_index(t_list *AB, int num)
 {
 	int		i;
 
+	if (!AB)
+		return (-1);
+
 	i = 0;
-	while (AB->number != num)
+	while (AB)
 	{
+		if (AB->number == num)
+			return (i);
 		i++;
 		AB = AB->next;
 	}
-	return (i);
+	return (-1);
 }
+

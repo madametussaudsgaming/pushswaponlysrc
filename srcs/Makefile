@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rpadasia <ryanpadasian@gmail.com>          +#+  +:+       +#+         #
+#    By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 18:28:11 by rpadasia          #+#    #+#              #
-#    Updated: 2025/03/21 18:28:11 by rpadasia         ###   ########.fr        #
+#    Updated: 2025/03/22 13:26:14 by rpadasia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 CC = gcc
-RM = rm -fclean
+RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 
 SRC = ft_alrsorted.c ft_atoi.c ft_best_rotation.c ft_error.c ft_freeing.c ft_isNOTvalid.c ft_lstindex_utils.c ft_lstminmax.c\
@@ -31,7 +31,7 @@ clean:
 	${RM} ${OBJ}
 
 fclean:
-	${RM} ${NAME}
+	${RM} ${NAME} ${OBJ}
 
 re: fclean all
 
