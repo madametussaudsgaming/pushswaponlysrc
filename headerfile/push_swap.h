@@ -20,14 +20,6 @@ typedef struct s_list
 	long			number;
 }	t_list;
 
-typedef struct s_r_info
-{
-	int		val;
-	char	id;
-	int		rev;
-	char	type;
-}	t_r_info;
-
 void	ft_error(void);
 int		ft_atoi(char *str);
 int		ft_lst_dup_int(t_list *lst);
@@ -50,15 +42,13 @@ void	ft_rrr(t_list **A, t_list **B, char print);
 void	ft_putendl_fd(char *s, int fd);
 int		ft_rarb_a(t_list *A, t_list *B, int c);
 int		ft_rarb_b(t_list *A, t_list *B, int c);
+int		ft_rarrb_a(t_list *A, t_list *B, int c);
 int		ft_rarrb_b(t_list *A, t_list *B, int c);
-int		ft_rrarb_a(t_list *A, t_list *B, int c);
-int		ft_rrarrb_a(t_list *A, t_list *B, int c);
-int		ft_rrarrb_b(t_list *A, t_list *B, int c);
-int		ft_rrarb_a(t_list *A, t_list *B, int c);
-int		ft_rrarb_b(t_list *A, t_list *B, int c);
-char	**ft_split(char *argv);
-char	*ft_strncpy(char *s1, char *s2, int n);
-t_list	*ft_lstnew(void *content);
+int 	ft_rrarrb_b(t_list *A, t_list *B, int c);
+int 	ft_rrarrb_a(t_list *A, t_list *B, int c);
+int	 	ft_rrarb_a(t_list *A, t_list *B, int c);
+int 	ft_rrarb_b(t_list *A, t_list *B, int c);
+t_list	*ft_lstnew(int content);
 void	ft_freestr(char **lst);
 void	ft_freelst(t_list **lst);
 int		ft_isnum(int c);
@@ -68,5 +58,14 @@ void	ft_argv_analysis(char **argv);
 void	sort_3_integers(t_list **stack);
 int		ft_lstsize(t_list *stack);
 int		ft_find_index(t_list *AB, int num);
-int		ft_node_placement(t_list *lst, int c, char AorB);
-
+int		ft_placement_b(t_list *lst, int c);
+int		ft_placement_a(t_list *lst, int c);
+int		ft_rotate_type(t_list *A, t_list *B, char mode);
+int 	apply_rrarb(t_list **A, t_list **B, int c, char s);
+int 	apply_rrarrb(t_list **A, t_list **B, int c, char s);
+int 	apply_rarb(t_list **A, t_list **B, int c, char s);
+int		apply_rarrb(t_list **A, t_list **B, int c, char s);
+char 	*ft_strncpy(char *s1, char *s2, int n);
+int		ft_word_count(char *str);
+char	*ft_word_dup(char *str, int start, int end);
+char	**ft_split(char *argv);
