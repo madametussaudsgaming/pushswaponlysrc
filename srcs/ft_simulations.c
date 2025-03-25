@@ -46,7 +46,11 @@ int	ft_rarrb_a(t_list *A, t_list *B, int c)
 {
 	int	i;
 
-	i = (ft_placement_a(A, c) + (ft_lstsize(B) - ft_find_index(B, c)));
+	i = 0;
+	if (ft_find_index(B,c))
+		i = (ft_placement_a(A, c) + (ft_lstsize(B) - ft_find_index(B, c)));
+	else
+		i = ft_placement_a(A, c);
 	return (i);
 }
 /*FINALLY FIXED*/
@@ -55,6 +59,9 @@ int	ft_rarrb_b(t_list *A, t_list *B, int c)
 {
 	int	i;
 
-	i = ((ft_lstsize(B) - ft_placement_b(B, c)) + ft_find_index(A, c));
+	i = 0;
+	if (ft_placement_b(B, c))
+		i = ft_lstsize(B) - ft_placement_b(B, c);
+	i = ft_find_index(A, c) + i;
 	return (i);
 }

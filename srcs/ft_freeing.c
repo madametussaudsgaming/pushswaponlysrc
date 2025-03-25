@@ -16,6 +16,8 @@ void	ft_freestr(char **lst)
 {
 	char	*tmp;
 
+	if (!lst)
+		return ;
 	while (*lst)
 	{
 		tmp = *lst;
@@ -30,7 +32,7 @@ void	ft_freelst(t_list **lst)
 	t_list *tmp;
 
 	if (!lst)
-		ft_error();
+		return ;
 	while(*lst)
 	{
 		tmp = (*lst)->next;

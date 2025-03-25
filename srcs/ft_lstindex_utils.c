@@ -15,27 +15,31 @@
 
 t_list	*ft_lstlast(t_list *A)
 {
-	while (A->next != NULL)
+	if (!A)
+		return (NULL);
+	while (A->next)
 		A = A->next;
 	return (A);
 }
 
 void	ft_lstadd_back(t_list **lst, t_list *node)
 {
+	if (!lst)
+		return ;
 	if (!*lst)
 		*lst = node;
 	else
 		(ft_lstlast(*lst))->next = node;
 }
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(int num)
 {
 	t_list	*node;
 
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
 		ft_error();
-	node->number = content;
+	node->number = num;
 	node->next = NULL;
 	return (node);
 }
@@ -44,17 +48,11 @@ int	ft_find_index(t_list *AB, int num)
 {
 	int		i;
 
-	if (!AB)
-		return (-1);
-
 	i = 0;
-	while (AB)
+	while (AB->number != num)
 	{
-		if (AB->number == num)
-			return (i);
 		i++;
 		AB = AB->next;
 	}
-	return (-1);
+	return (i);
 }
-

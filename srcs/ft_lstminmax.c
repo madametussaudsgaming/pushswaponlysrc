@@ -33,26 +33,31 @@ int	ft_lstfattest(t_list *lst)
 	fat = lst->number;
 	while (lst)
 	{
-		if (lst-> number > fat)
+		if (lst->number > fat)
 			fat = lst->number;
 		lst = lst->next;
 	}
 	return (fat);
 }
 
-void	sort_3_integers(t_list **stack)
+void	sort_3_integers(t_list **A)
 {
-	int	fattest;
-	int	smollest;
-
-	if (!stack || !*stack)
-		return ;
-	fattest = ft_lstfattest(*stack);
-	smollest = ft_lstsmollest(*stack);
-	if (*stack && (*stack)->number == fattest)
-		ft_ra(stack, 'T');
-	else if ((*stack)->next && (*stack)->next->number == fattest)
-		ft_rra(stack, 'T');
-	if ((*stack)->number != smollest)
-		ft_sa(stack, 'T');
+	if (ft_lstsmollest(*A) == (*A)->number)
+	{
+		ft_rra(A, 'T');
+		ft_sa(A, 'T');
+	}
+	else if (ft_lstfattest(*A) == (*A)->number)
+	{
+		ft_ra(A, 'T');
+		if (!ft_alrsorted(*A))
+			ft_sa(A, 'T');
+	}
+	else
+	{
+		if (ft_find_index(*A, ft_lstfattest(*A)) == 1)
+			ft_rra(A, 'T');
+		else
+			ft_sa(A, 'T');
+	}
 }

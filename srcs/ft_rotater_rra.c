@@ -12,9 +12,9 @@
 
 #include "../headerfile/push_swap.h"
 
-int apply_rrarb(t_list **A, t_list **B, int c, char s)
+int apply_rrarb(t_list **A, t_list **B, int c, char AB)
 {
-	if (s == 'A' || s == 'a')
+	if (AB == 'a')
 	{
 		while ((*A)->number != c)
 			ft_rra(A, 'T');
@@ -33,9 +33,9 @@ int apply_rrarb(t_list **A, t_list **B, int c, char s)
 	return (-1);
 }
 
-int apply_rrarrb(t_list **A, t_list **B, int c, char s)
+int apply_rrarrb(t_list **A, t_list **B, int c, char AB)
 {
-	if (s == 'a' || s == 'A')
+	if (AB == 'a')
 	{
 		while ((*A)->number != c && ft_placement_b(*B, c) > 0)
 			ft_rrr(A, B, 'T');

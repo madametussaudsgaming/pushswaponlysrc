@@ -17,7 +17,7 @@ int	ft_alrsorted(t_list *A)
 	int	tmp;
 
 	tmp = A->number;
-	while (A->next != NULL)
+	while (A)
 	{
 		if (tmp > A->number)
 			return (0);

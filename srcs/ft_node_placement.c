@@ -12,54 +12,48 @@
 
 #include "../headerfile/push_swap.h"
 
-// This function finds the correct place of the number in stack_a.
-// In other words, it check what index number nbr_push will get
-// after it is being pushed to the stack_a.
 int	ft_placement_a(t_list *lst, int c)
 {
 	int		i;
-	int		max_index;
 	t_list	*tmp;
 
-	i = 0;
-	max_index = 0;
-	tmp = lst;
-	if (!lst)
-		return (0);
-	while (tmp->next)
+	i = 1;
+	if (c < lst->number && c > ft_lstlast(lst)->number)
+		i = 0;
+	else if (c > ft_lstfattest(lst) || c < ft_lstsmollest(lst))
+		i = ft_find_index(lst, ft_lstsmollest(lst));
+	else
 	{
-		if (tmp->number < c && tmp->next->number > c)
-			return (i + 1);
-		if (tmp->number > lst->number)
-			max_index = i + 1;
-		tmp = tmp->next;
-		i++;
+		tmp = lst->next;
+		while (lst->number > c || tmp->number < c)
+		{
+			lst = lst->next;
+			tmp = lst->next;
+			i++;
+		}
 	}
-	return (max_index);
+	return (i);
 }
 
-// This function finds the correct place of the number in stack_b.
-// In other words, it check what index number nbr_push will get
-// after it is being pushed to the stack_b.
 int	ft_placement_b(t_list *lst, int c)
 {
 	int		i;
-	int		max_index;
 	t_list	*tmp;
 
-	i = 0;
-	max_index = 0;
-	tmp = lst;
-	if (!lst)
-		return (0);
-	while (tmp->next)
+	i = 1;
+	if (c > lst->number && c < ft_lstlast(lst)->number)
+		i = 0;
+	else if (c > ft_lstfattest(lst) || c < ft_lstsmollest(lst))
+		i = ft_find_index(lst, ft_lstfattest(lst));
+	else
 	{
-		if (tmp->number > c && tmp->next->number < c)
-			return (i + 1);
-		if (tmp->number < lst->number)
-			max_index = i + 1;
-		tmp = tmp->next;
-		i++;
+		tmp = lst->next;
+		while (lst->number < c || tmp->number > c)
+		{
+			lst = lst->next;
+			tmp = lst->next;
+			i++;
+		}
 	}
-	return (max_index);
+	return (i);
 }

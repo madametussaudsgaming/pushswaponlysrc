@@ -16,9 +16,8 @@ void	ft_ra(t_list **A, char print)
 {
 	t_list	*tmp;
 
-	if (!A || !(*A) || !(*A)->next)
+	if (!*A || !(*A)->next)
 		return ;
-
 	tmp = *A;
 	*A = ft_lstlast(*A);
 	(*A)->next = tmp;
@@ -33,11 +32,15 @@ void	ft_rra(t_list **A, char print)
 	t_list	*tmp;
 	int		i;
 
-	if (!A || !(*A) || !(*A)->next)
+	if (!*A || !(*A)->next)
 		return ;
-
-	i = ft_lstsize(*A);
+	i = 0;
 	tmp = *A;
+	while ((*A)->next)
+	{
+		*A = (*A)->next;
+		i++;
+	}
 	(*A)->next = tmp;
 	while (i > 1)
 	{
@@ -53,9 +56,8 @@ void	ft_pb(t_list **A, t_list **B, char print)
 {
 	t_list	*tmp;
 
-	if (!A || !(*A))
+	if (!*A)
 		return ;
-
 	tmp = *B;
 	*B = *A;
 	*A = (*A)->next;
@@ -68,6 +70,8 @@ void	ft_sa(t_list **A, char print)
 {
 	t_list	*tmp;
 
+	if (!*A || !((*A)->next))
+		return ;
 	tmp = *A;
 	*A = (*A)->next;
 	tmp->next = (*A)->next;
