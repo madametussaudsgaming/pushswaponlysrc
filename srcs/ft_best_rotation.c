@@ -6,7 +6,7 @@
 /*   By: rpadasia <rpadasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 15:28:12 by rpadasia          #+#    #+#             */
-/*   Updated: 2025/03/22 12:13:55 by rpadasia         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:11:58 by rpadasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_best_rotation(t_list *A, t_list *B)
 	return (best);
 }
 
-// This function calculate and decides which rotation
+// This function calculate 	}and decides which rotation
 // combination is best to use to sort the stack. Of
 // course, after rotation there is always one push
 // operation is left to do which i embeded to code.
