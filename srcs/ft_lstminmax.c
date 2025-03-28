@@ -42,22 +42,15 @@ int	ft_lstfattest(t_list *lst)
 
 void	sort_3_integers(t_list **A)
 {
-	if (ft_lstsmollest(*A) == (*A)->number)
-	{
-		ft_rra(A, 'T');
-		ft_sa(A, 'T');
-	}
-	else if (ft_lstfattest(*A) == (*A)->number)
-	{
-		ft_ra(A, 'T');
-		if (!ft_alrsorted(*A))
-			ft_sa(A, 'T');
-	}
-	else
-	{
-		if (ft_find_index(*A, ft_lstfattest(*A)) == 1)
-			ft_rra(A, 'T');
-		else
-			ft_sa(A, 'T');
-	}
+	int    fattest;
+    int    smollest;
+
+    fattest = ft_lstfattest(*A);
+    smollest = ft_lstsmollest(*A);
+    if ((*A)->number == fattest)
+        ft_ra(A, 'T');
+    else if ((*A)->next->number == fattest)
+        ft_rra(A, 'T');
+    if ((*A)->number != smollest)
+        ft_sa(A, 'T');
 }

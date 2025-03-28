@@ -14,12 +14,14 @@
 
 int	ft_lstsize(t_list *stack)
 {
-	size_t		i;
+	t_list			*node;
+	unsigned int	i;
 
+	node = stack;
 	i = 0;
-	while (stack)
+	while (node)
 	{
-		stack = stack->next;
+		node = node->next;
 		i++;
 	}
 	return (i);

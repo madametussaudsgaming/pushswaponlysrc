@@ -12,37 +12,31 @@
 
 #include "../headerfile/push_swap.h"
 
-int	ft_isdigit(int c)
-{
-	if (c > 47 && c < 58)
-		return (1);
-	return (0);
-}
-
 int	ft_atoi(char *str)
 {
-	int				mod;
-	long long int	i;
+	long	res;
+	int		isnegative;
+	long	i;
 
+	res = 0;
 	i = 0;
-	mod = 1;
-	while (*str >=  9 && *str <= 13)
-		str++;
-	if (*str == '-')
+	isnegative = 0;
+	while (str[i] && ((str[i] <= 13 && str[i] >= 9) || str[i] == 32))
+		i++;
+	if (str[i] == '-')
+		isnegative = 1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		mod = -1;
-		str++;
+		res *= 10;
+		res += ((int)str[i] - 48);
+		i++;
 	}
-	else if (*str == '+')
-		str++;
-	while (*str)
-	{
-		if (!ft_isdigit(*str))
-			ft_error();
-		i = i * 10 + (*str - 48);
-		str++;
-	}
-	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
+	if (res > INT_MAX || res < INT_MIN)
 		ft_error();
-	return (mod * i);
+	if (isnegative)
+		return (-res);
+	else
+		return (res);
 }

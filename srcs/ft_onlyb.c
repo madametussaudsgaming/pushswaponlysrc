@@ -72,8 +72,6 @@ void	ft_sb(t_list **B, char print)
 {
 	t_list	*tmp;
 
-	if (!*B || !((*B)->next))
-		return ;
 	tmp = *B;
 	*B = (*B)->next;
 	tmp->next = (*B)->next;

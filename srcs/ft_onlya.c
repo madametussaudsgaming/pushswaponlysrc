@@ -70,8 +70,6 @@ void	ft_sa(t_list **A, char print)
 {
 	t_list	*tmp;
 
-	if (!*A || !((*A)->next))
-		return ;
 	tmp = *A;
 	*A = (*A)->next;
 	tmp->next = (*A)->next;
